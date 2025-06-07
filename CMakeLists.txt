@@ -59,13 +59,17 @@ set(CPACK_PACKAGE_VERSION_MAJOR ${BANKING_VERSION_MAJOR})
 set(CPACK_PACKAGE_VERSION_MINOR ${BANKING_VERSION_MINOR})
 set(CPACK_PACKAGE_VERSION_PATCH ${BANKING_VERSION_TWEAK})
 
-# Лицензия и группа для RPM
+# Лицензия и группа для RPM (не обязательны, но полезны)
 set(CPACK_RPM_PACKAGE_LICENSE "MIT")
 set(CPACK_RPM_PACKAGE_GROUP "Applications/Engineering")
 set(CPACK_RPM_PACKAGE_ARCHITECTURE x86_64)
 
-# Форматы пакетов: можно оставить только нужные
-set(CPACK_GENERATOR "TGZ;DEB;RPM")
+# Убираем NSIS из генераторов
+# Возможные значения: TGZ DEB ZIP RPM (выбирайте нужные)
+set(CPACK_GENERATOR "ZIP")
+
+# Если хотите собирать и TGZ и DEB на Linux:
+# set(CPACK_GENERATOR "TGZ;DEB")
 
 # Убираем или создаём ChangeLog.md, чтобы не было ошибок
 # set(CPACK_RPM_CHANGELOG_FILE "${PROJECT_SOURCE_DIR}/ChangeLog.md")  # раскомментировать, если файл существует
