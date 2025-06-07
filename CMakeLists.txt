@@ -64,11 +64,10 @@ set(CPACK_RPM_PACKAGE_LICENSE "MIT")
 set(CPACK_RPM_PACKAGE_GROUP "Applications/Engineering")
 set(CPACK_RPM_PACKAGE_ARCHITECTURE x86_64)
 
-# Убираем NSIS из генераторов
-# Возможные значения: TGZ DEB ZIP RPM (выбирайте нужные)
+# Генерируем только ZIP-архив — безопасно и переносимо
 set(CPACK_GENERATOR "ZIP")
 
-# Если хотите собирать и TGZ и DEB на Linux:
+# Если вы работаете в Linux и хотите собирать TGZ и DEB:
 # set(CPACK_GENERATOR "TGZ;DEB")
 
 # Убираем или создаём ChangeLog.md, чтобы не было ошибок
